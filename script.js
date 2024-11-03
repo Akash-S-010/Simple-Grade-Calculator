@@ -6,8 +6,8 @@ const jsConfetti = new JSConfetti()
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    let grade = ""
-    let result = ""
+    let grade 
+    let result 
     const mark = inputBox.value
     if (mark < 0 || mark > 100 || mark == "") {
         alert('Mark should be between 0 - 100')
