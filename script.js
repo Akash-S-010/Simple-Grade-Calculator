@@ -46,15 +46,15 @@ submitBtn.addEventListener('click', (e) => {
         resultBox.innerHTML = ` You are  ${result} <br>  ${grade}`
         jsConfetti.addConfetti()
         
-    }else{
+    }else if (result === "Failed"){
         resultBox.style.display = "block"
         resultBox.style.color = "red"
         resultBox.innerHTML = `You are  ${result} <br> ${grade}`
-    }
-
-    if (mark === ""){
+    }else{
         resultBox.style.display = "none"
+
     }
+    
     inputBox.focus()
     console.log(result, grade);
 
