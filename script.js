@@ -2,6 +2,7 @@ let inputBox = document.querySelector('.input-field')
 let submitBtn = document.querySelector('.result-btn')
 let resultBox = document.querySelector('.result-box')
 let resultPrint = document.querySelector('.result-print')
+const jsConfetti = new JSConfetti()
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -43,11 +44,12 @@ submitBtn.addEventListener('click', (e) => {
         resultBox.style.display = "block"
         resultBox.style.color = "green"
         resultBox.innerHTML = ` You are  ${result} <br>  ${grade}`
+        jsConfetti.addConfetti()
         
     }else{
         resultBox.style.display = "block"
         resultBox.style.color = "red"
-        resultBox.innerHTML = `Sorry  ${result} <br> ${grade}`
+        resultBox.innerHTML = `You are  ${result} <br> ${grade}`
     }
 
     if (mark === ""){
