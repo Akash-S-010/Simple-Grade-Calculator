@@ -1,14 +1,61 @@
 
-//Create a website to find the grade of the mark given by the student in the input,
-//  and on clicking the submit button, display whether the student is passed or not and their grade.
-//   Grade Description:
-//    A+ (90-100) 
-//    A (80-89) 
-//    B+ (70-79) 
-//    B (60-69) 
-//    C+ (50-59) 
-//    C (40-49) 
-//    D+ (30-39) 
-//    D (20-29) 
-//    E (Below 20) 
-//    Minimum passing grade: D+ (30-39)
+let inputBox = document.querySelector('.input-field')
+let submitBtn = document.querySelector('.result-btn')
+let resultBox = document.querySelector('.result-box')
+let resultPrint = document.querySelector('.result-print')
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    let grade = ""
+    let result = ""
+    const mark = inputBox.value
+    if (mark < 0 || mark > 100 || mark == "") {
+        alert('Mark should be between 0 - 100')
+    } else if (mark >= 90 && mark <= 100) {
+        grade = "A+"
+        result = "Passed";
+    } else if (mark >= 80 && mark < 90) {
+        grade = "A"
+        result = "Passed"
+    } else if (mark >= 70 && mark < 80) {
+        grade = "B+"
+        result = "Passed"
+    } else if (mark >= 60 && mark < 70) {
+        grade = "B"
+        result = "Passed"
+    } else if (mark >= 50 && mark < 60) {
+        grade = "C+"
+        result = "Passed"
+    } else if (mark >= 40 && mark < 50) {
+        grade = "C"
+        result = "Passed"
+    } else if (mark >= 30 && mark < 40) {
+        grade = "D+"
+        result = "Passed"
+    } else if (mark >= 20 && mark < 30) {
+        grade = "D"
+        result = "Failed"
+    } else {
+        grade = "E"
+        result = "Failed"
+    }
+    
+    if (result==="Passed"){
+        resultBox.style.display = "block"
+        resultBox.style.color = "green"
+        resultBox.innerHTML = ` You are  ${result} <br>  ${grade}`
+        
+    }else{
+        resultBox.style.display = "block"
+        resultBox.style.color = "red"
+        resultBox.innerHTML = `Sorry  ${result} <br> ${grade}`
+    }
+
+    if (mark === ""){
+        resultBox.style.display = "none"
+    }
+    inputBox.focus()
+    console.log(result, grade);
+    console.log(typeof confetti);
+
+})
