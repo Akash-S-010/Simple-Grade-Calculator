@@ -1,4 +1,3 @@
-
 let inputBox = document.querySelector('.input-field')
 let submitBtn = document.querySelector('.result-btn')
 let resultBox = document.querySelector('.result-box')
@@ -56,6 +55,5 @@ submitBtn.addEventListener('click', (e) => {
     }
     inputBox.focus()
     console.log(result, grade);
-    console.log(typeof confetti);
 
 })
